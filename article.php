@@ -8,9 +8,9 @@ include_once('model/post.php');
 
 $id = $_GET['id'] ?? '';
 $post = getPost($db, $id);
-$hasPost = isset($post['post_id']);
+$postExists = isset($post['post_id']);
 
-if ($hasPost) {
+if ($postExists) {
     include_once('view/article.php');
     include_once('view/main/footer.php');
 } else {

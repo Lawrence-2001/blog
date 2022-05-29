@@ -8,17 +8,17 @@ $id = $_GET['id'] ?? '';
 $fieldsNames = ['content', 'title'];
 $fields = [];
 $errors = [];
-$lengthOfField = 2;
+$minLengthOfField = 2;
 $view = 'edit';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $fields = extractFields($_POST, $fieldsNames);
-    if (isFieldsEntered($fields)) {
-        if (checkLengthOfFields($fields, $lengthOfField)) {
+    if (fieldsIsEntered($fields)) {
+        if (checkMinLengthOfFields($fields, $minLengthOfField)) {
             addPost($db, $fields['title'], $fields['content']);
             header('Location: http://localhost/hw');
         } else {
-            $errors['checkLengthOfFields'] = "Enter at least $lengthOfField characters";
+            $errors['checkLengthOfFields'] = "Enter at least $minLengthOfField characters";
         }
     } else {
         $errors['isFieldsEntered'] = "Fill in all the fields of the form";

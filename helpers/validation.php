@@ -12,7 +12,7 @@
         return $result;
     }
 
-    function isFieldsEntered(array $fields) : bool{
+    function fieldsIsEntered(array $fields) : bool{
         $marker = true;
         foreach ($fields as $field){
             if(empty($field)){
@@ -21,24 +21,25 @@
         }
         return $marker;
     };
+
     function validationField(string $field) : string {
         return trim(convertToUTF8($field));
     }
 
-    function checkLengthOfField(string $string, int $length) : int {
-        return mb_strlen($string, 'UTF-8') >= $length;
+    function checkMinLengthOfField(string $string, int $minLength) : bool {
+        return mb_strlen($string, 'UTF-8') >= $minLength;
     }
 
-    function checkLengthOfFields(array $fields, int $length) : bool {
+    function checkMinLengthOfFields(array $fields, int $minLength) : bool {
         $marker = true;
         foreach ($fields as $field){
-            if(!checkLengthOfField($field, $length)){
+            if(!checkMinLengthOfField($field, $minLength)){
                 $marker = false;
             }
         }
         return $marker;
     }
 
-    function coverField(string $field) : string {
+    function escapingFields(string $field) : string {
         return htmlspecialchars($field);
     }

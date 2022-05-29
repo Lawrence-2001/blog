@@ -13,8 +13,8 @@ $view = 'edit';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $fields = extractFields($_POST, $fieldsNames);
-    if (isFieldsEntered($fields)) {
-        if (checkLengthOfFields($fields, $lengthOfField)) {
+    if (fieldsIsEntered($fields)) {
+        if (checkMinLengthOfFields($fields, $lengthOfField)) {
             editPost($db, $id, $fields['title'], $fields['content']);
             header('Location: http://localhost/hw');
         } else {

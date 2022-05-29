@@ -1,8 +1,8 @@
 <div class="content">
 
         <div class="article">
-            <h1><?=coverField($post['title'])?></h1>
-            <div><?=coverField($post['content'])?></div>
+            <h1><?=escapingFields($post['title'])?></h1>
+            <div><?=escapingFields($post['content'])?></div>
             <hr>
             <a href="delete.php?id=<?=$post['post_id']?>">Remove</a>
             <br><br>
