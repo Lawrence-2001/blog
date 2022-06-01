@@ -1,7 +1,7 @@
 <?php
 
 	include_once('helpers/db_functions.php');
-	include_once('conf.php');
+	include_once('db_configuration.php');
     include_once('model/post.php');
 
     $articles = getPosts($db);
