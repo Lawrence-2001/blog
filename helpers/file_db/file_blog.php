@@ -1,6 +1,6 @@
 <?php
 function getArticles() : array{
-    return json_decode(file_get_contents('db/articles.json'), true);
+    return json_decode(file_get_contents('file_db/articles.json'), true);
 }
 
 function addArticle(string $title, string $content) : bool{
@@ -40,6 +40,6 @@ function removeArticle(int $id) : bool{
 }
 
 function saveArticles(array $articles) : bool{
-    file_put_contents('db/articles.json', json_encode($articles));
+    file_put_contents('file_db/articles.json', json_encode($articles));
     return true;
 }
