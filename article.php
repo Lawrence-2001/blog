@@ -1,7 +1,7 @@
 <?php
 
 include_once('helpers/validation.php');
-include_once('helpers/functions.php');
+include_once('helpers/db_functions.php');
 include_once('conf.php');
 include_once('model/post.php');
 
