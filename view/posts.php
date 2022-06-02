@@ -10,7 +10,7 @@
         <div class="entry__meta">
             <ul>
                 <li>July 12, 2019</li>
-                <li><a href="#" title="" rel="category tag">Ghost</a></li>
+                <li><a href="#" title="" rel="category tag"><!--Category name--></a></li>
                 <li><!--Author name--></li>
             </ul>
         </div>
@@ -27,16 +27,16 @@
 <? endforeach; ?>
 
 
-<a href="add.php">Add article</a>
-<hr>
-<div class="articles">
-	<? foreach($articles as $id => $article): ?>
-		<div class="article">
-			<h2><?=$article['title']?></h2>
-			<a href="article.php?id=<?=$article['post_id']?>">Read more</a>
-		</div>
-
-	<? endforeach; ?>
-
-
-</div>
+<!--<a href="add.php">Add article</a>-->
+<!--<hr>-->
+<!--<div class="articles">-->
+<!--	--><?// foreach($articles as $id => $article): ?>
+<!--		<div class="article">-->
+<!--			<h2>--><?//=$article['title']?><!--</h2>-->
+<!--			<a href="article.php?id=--><?//=$article['post_id']?><!--">Read more</a>-->
+<!--		</div>-->
+<!---->
+<!--	--><?// endforeach; ?>
+<!---->
+<!---->
+<!--</div>-->
