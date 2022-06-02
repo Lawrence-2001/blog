@@ -3,8 +3,8 @@
 include_once('configuration/bootstrap.php');
 
 $articles = getPosts($db);
-$title = 'Lawrence.com';
-
-$pageHTML = buildPage('posts', ['title' => $title, 'sidebar' => 'main/sidebar'], ['articles' =>$articles]);
+$pageParams = ['title' => 'Lawrence.com', 'sidebar' => 'main/sidebar'];
+$templateParams = ['articles' =>$articles];
+$pageHTML = buildPage('posts', $pageParams, $templateParams);
 
 echo $pageHTML;
