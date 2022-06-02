@@ -1,5 +1,5 @@
 <?php
-function template(string $templateName, array $templateParams = []) : string
+function template(string $templateName, array $templateParams = []): string
 {
     $templatePath = "view/$templateName.php";
     extract($templateParams);
@@ -9,3 +9,11 @@ function template(string $templateName, array $templateParams = []) : string
     return $bufferValue;
 }
 
+function buildPage(string $templateName, string $title, array $templateParams = []): string
+{
+    $content = template($templateName, $templateParams);
+    $sidebarHTML = template('main/sidebar');
+    $pageHTML = template('main/main', ['content' => $content, 'sidebar' => $sidebarHTML, 'title' => $title]);
+
+    return $pageHTML;
+}
