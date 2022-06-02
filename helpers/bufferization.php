@@ -9,10 +9,11 @@ function template(string $templateName, array $templateParams = []): string
     return $bufferValue;
 }
 
-function buildPage(string $templateName, string $title, array $templateParams = []): string
+function buildPage(string $templateName, array $pageParams, array $templateParams = []): string
 {
+    extract($pageParams);
     $content = template($templateName, $templateParams);
-    $sidebarHTML = template('main/sidebar');
+    $sidebarHTML = template($sidebar);
     $pageHTML = template('main/main', ['content' => $content, 'sidebar' => $sidebarHTML, 'title' => $title]);
 
     return $pageHTML;
