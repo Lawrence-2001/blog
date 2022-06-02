@@ -6,8 +6,8 @@ include_once('configuration/db_configuration.php');
 include_once('model/post.php');
 include_once('helpers/bufferization.php');
 
-$id = $_GET['id'] ?? '';
-$post = getPost($db, $id);
+$postId = $_GET['id'];
+$post = getPost($db, $postId);
 $postExist = $post != false;
 
 $title = $postExist ? $post['title'] : 'Error 404';
@@ -18,3 +18,4 @@ $sidebarHTML = template('main/sidebar');
 $pageHTML = template('main/main',['content' =>$articleHTML, 'sidebar' => $sidebarHTML, 'title' => $title]);
 
 echo $pageHTML;
+//header('HTTP/1.1 404 NOT FOUND');
