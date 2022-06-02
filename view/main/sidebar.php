@@ -21,6 +21,3 @@
     </div>
 </div> <!-- end sidebar -->
 
-</div> <!-- end row -->
-
-</div> <!-- end content-wrap -->

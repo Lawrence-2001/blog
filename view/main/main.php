@@ -52,9 +52,9 @@
 
         <div class="s-header__content column">
             <h1 class="s-header__logotext">
-                <a href="index.html" title="">Keep It Simple.</a>
+                <a href="index.html" title="">Blog about backend development.</a>
             </h1>
-            <p class="s-header__tagline">Put your awesome tagline here.</p>
+            <p class="s-header__tagline">Welcome to my blog.</p>
         </div>
 
     </div> <!-- end row -->
@@ -97,7 +97,9 @@
 
         <div id="main" class="s-content__main large-8 column">
             <?= $content ?>
-        </div> <!-- end sidebar -->
+
+        </div> <!-- end main -->
+        <?= $sidebar?>
 
     </div> <!-- end row -->
 
