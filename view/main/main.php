@@ -52,7 +52,7 @@
 
         <div class="s-header__content column">
             <h1 class="s-header__logotext">
-                <a href="index.html" title="">Blog about backend development.</a>
+                <a href="index.php" title="">Blog about backend development.</a>
             </h1>
             <p class="s-header__tagline">Welcome to my blog.</p>
         </div>
@@ -64,7 +64,7 @@
         <div class="row">
 
             <ul class="s-header__nav">
-                <li class="current"><a href="index.html">Home</a></li>
+                <li class="current"><a href="index.php">Home</a></li>
                 <li class="has-children"><a href="#0">Dropdown</a>
                     <ul>
                         <li><a href="#0">Submenu 01</a></li>
