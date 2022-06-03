@@ -1,21 +1,18 @@
 <?php
 
-include_once('helpers/validation.php');
-include_once('helpers/db_functions.php');
-include_once('configuration/db_configuration.php');
-include_once('model/post.php');
-include_once('helpers/bufferization.php');
+include_once('configuration/bootstrap.php');
 
-$postId = $_GET['id'];
-$post = getPost($db, $postId);
+$post = getPost($db, $_GET['id']);
 $postExist = $post != false;
 
-$title = $postExist ? $post['title'] : 'Error 404';
-$contentView = $postExist ? 'post' : 'main/404';
+$pageParams['title'] = $post['title'] ?? 'Error 404';
+$pageParams['sidebar'] = 'main/sidebar';
+$templateName = $postExist ? 'post' : 'main/404';
 
-$articleHTML = template($contentView,['post' => $post]);
-$sidebarHTML = template('main/sidebar');
-$pageHTML = template('main/main',['content' =>$articleHTML, 'sidebar' => $sidebarHTML, 'title' => $title]);
+$pageHTML = buildPage($templateName, $pageParams, ['post' => $post]);
+
+if(!$postExist){
+    header('HTTP/1.1 404 NOT FOUND');
+}
 
 echo $pageHTML;
-//header('HTTP/1.1 404 NOT FOUND');
