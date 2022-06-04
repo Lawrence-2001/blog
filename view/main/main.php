@@ -72,8 +72,8 @@
                         <li><a href="#0">Submenu 03</a></li>
                     </ul>
                 </li>
-                <li><a href="demo.html">Demo</a></li>
-                <li><a href="archives.html">Archives</a></li>
+                <li><a href="add.php">Add article</a></li>
+                <li><a href="edit.php">Edit article</a></li>
                 <li class="has-children"><a href="#0">Blog</a>
                     <ul>
                         <li><a href="blog.html">Blog Entries</a></li>
