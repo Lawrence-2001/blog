@@ -7,6 +7,13 @@ function getPosts(PDO $connection): array
     return $result->fetchAll();
 }
 
+function getPostsByCategory(PDO $connection, int $categoryID): array
+{
+    $sql_query = "SELECT * FROM `posts` WHERE posts.category_id =:category_id ORDER BY `post_id` DESC";
+    $result = dbQuery($connection, $sql_query,['category_id' => $categoryID]);
+    return $result->fetchAll();
+}
+
 function getPost(PDO $connection, $post_id)
 {
     $sql_query = "SELECT * FROM posts 
