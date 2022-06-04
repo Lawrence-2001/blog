@@ -23,17 +23,17 @@ function getPost(PDO $connection, $post_id)
     return $result->fetch();
 }
 
-function addPost(PDO $connection, string $title, string $content): bool
+function addPost(PDO $connection, string $title, string $content, int $categoryID): bool
 {
-    $sql_query = "INSERT INTO `posts`(`title`, `content`) VALUES (:title, :content)";
-    dbQuery($connection, $sql_query, ['title' => $title, 'content' => $content]);
+    $sql_query = "INSERT INTO `posts`(`title`, `content`, `category_id`) VALUES (:title, :content, :category_id)";
+    dbQuery($connection, $sql_query, ['title' => $title, 'content' => $content, 'category_id' => $categoryID]);
     return true;
 }
 
-function editPost(PDO $connection, int $post_id, string $title, string $content): bool
+function editPost(PDO $connection, int $post_id, string $title, string $content, int $categoryID): bool
 {
-    $sql_query = "UPDATE posts SET title = :title, content = :content WHERE post_id = :post_id";
-    dbQuery($connection, $sql_query, ['post_id' => $post_id, 'title' => $title, 'content' => $content]);
+    $sql_query = "UPDATE posts SET title = :title, content = :content, category_id = :category_id WHERE post_id = :post_id";
+    dbQuery($connection, $sql_query, ['post_id' => $post_id, 'title' => $title, 'content' => $content, 'category_id' => $categoryID]);
     return true;
 }
 

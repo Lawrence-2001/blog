@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $fields = extractFields($_POST, $fieldsNames);
     validateFormFields($fields, $errors, 2);
     if (notExistsErrors($errors)) {
-        editPost($db, $id, $fields['title'], $fields['content']);
+        editPost($db, $id, $fields['title'], $fields['content'], $_POST['category_id']);
         header('Location: http://localhost/hw');
     }
 } elseif ($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -28,5 +28,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-$pageHTML = buildPage($view, $pageParams, ['fields' => $fields, 'errors' => $errors]);
+$pageHTML = buildPage($view, $pageParams, ['fields' => $fields,'categories' => $categories, 'errors' => $errors, 'post_id' => $post['category_id']]);
 echo $pageHTML;

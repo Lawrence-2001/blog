@@ -10,6 +10,16 @@
         <input type="text" name="title" value="<?=escapingFields($fields['title'])?>"><br><br>
         Article Content:<br>
         <input type="text" name="content" value="<?=escapingFields($fields['content'])?>"><br><br>
+        Category:<br>
+        <select name="category_id">
+        <? foreach($categories as $category): ?>
+            <option
+                    value="<?=$category['category_id']?>"
+            >
+                <?=$category['name']?>
+            </option>
+        <? endforeach; ?>
+        </select>
         <button>Send</button>
     </form>
 </div>
