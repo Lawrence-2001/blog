@@ -28,5 +28,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-$pageHTML = buildPage($view, $pageParams, ['fields' => $fields,'categories' => $categories, 'errors' => $errors, 'post_id' => $post['category_id']]);
+$pageHTML = buildPage($view, $pageParams, ['fields' => $fields,'categories' => $categories, 'errors' => $errors, 'category_id' => $post['category_id']]);
 echo $pageHTML;

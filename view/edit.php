@@ -9,7 +9,7 @@
             <? foreach($categories as $category): ?>
                 <option
                         value="<?=$category['category_id']?>"
-                        <?if($category['category_id']== $post_id){ echo "selected";}?>
+                        <?if($category['category_id']== $category_id){ echo "selected";}?>
                 >
                     <?=$category['name']?>
                 </option>
