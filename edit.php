@@ -7,7 +7,8 @@ $fields = [];
 $errors = [];
 
 $view = 'articleForm';
-$pageParams = ['title' => 'Add article', 'sidebar' => 'main/sidebar'];
+$categories = getCategories($db);
+$pageParams = ['title' => 'Lawrence.com', 'sidebar' => 'main/sidebar', 'categories' => $categories];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $fields = extractFields($_POST, $fieldsNames);

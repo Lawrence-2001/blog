@@ -5,8 +5,10 @@ include_once('configuration/bootstrap.php');
 $post = getPost($db, $_GET['id']);
 $postExist = $post != false;
 
+$categories = getCategories($db);
+$pageParams = ['sidebar' => 'main/sidebar', 'categories' => $categories];
 $pageParams['title'] = $post['title'] ?? 'Error 404';
-$pageParams['sidebar'] = 'main/sidebar';
+
 $templateName = $postExist ? 'post' : 'main/404';
 
 $pageHTML = buildPage($templateName, $pageParams, ['post' => $post]);
