@@ -17,5 +17,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $fields = extractFields($_GET, $fieldsNames);
 }
 
-$pageHTML = buildPage('add', $pageParams, ['fields' =>$fields, 'errors' => $errors]);
+$pageHTML = buildPage('articleForm', $pageParams, ['fields' =>$fields, 'errors' => $errors]);
 echo $pageHTML;
