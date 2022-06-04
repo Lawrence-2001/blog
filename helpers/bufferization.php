@@ -14,9 +14,10 @@ function buildPage(string $templateName, array $pageParams, array $templateParam
 {
     extract($pageParams);
     $content = template($templateName, $templateParams);
-    /** @var string $sidebar */
-
-    $sidebarHTML = template($sidebar);
+    /** @var string $sidebar
+     **@var array $categories
+     */
+    $sidebarHTML = template($sidebar, ['categories' =>$categories]);
     $pageHTML = template('main/main', ['content' => $content, 'sidebar' => $sidebarHTML, 'title' => $title]);
 
     return $pageHTML;

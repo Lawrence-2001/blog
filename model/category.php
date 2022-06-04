@@ -5,3 +5,5 @@ function getCategories(PDO $connection) : array {
     return $result->fetchAll();
 }
 
+
+

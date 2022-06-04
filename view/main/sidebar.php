@@ -11,12 +11,12 @@
     <div class="widget widget--categories">
         <h3 class="h6">Categories.</h3>
         <ul>
-            <li><a href="#0" title="">Wordpress</a> (2)</li>
-            <li><a href="#0" title="">Ghost</a> (14)</li>
-            <li><a href="#0" title="">Joomla</a> (5)</li>
-            <li><a href="#0" title="">Drupal</a> (3)</li>
-            <li><a href="#0" title="">Magento</a> (2)</li>
-            <li><a href="#0" title="">Uncategorized</a> (9)</li>
+            <?
+            /**
+             * @var array $categories */
+            foreach ($categories as $category):?>
+            <li><a href="posts.php?category_id=<?=$category['category_id']?>" title=""><?=$category['name']?></a></li>
+            <?endforeach;?>
         </ul>
     </div>
 </div> <!-- end sidebar -->
