@@ -4,7 +4,7 @@
     <header class="entry__header">
 
         <h2 class="entry__title h1">
-            <a href="post.php?id=<?=$article['post_id']?>" title=""><?=$article['title']?></a>
+            <a href="post.php?id=<?=$article['post_id']?>" title=""><?=escapingFields($article['title'])?></a>
         </h2>
 
         <div class="entry__meta">
@@ -19,7 +19,7 @@
 
     <div class="entry__content">
         <p>
-            <?=$article['content']?>
+            <?=escapingFields($article['content'])?>
         </p>
     </div>
 
