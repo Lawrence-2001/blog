@@ -54,12 +54,18 @@ function validateFormFields(array $fields, array &$errors, int $minLengthOfField
     $errors['checkMinLengthOfFields'] = checkMinLengthOfFields($fields, $minLengthOfField) ? true : "Enter at least $minLengthOfField characters";
 }
 
-function notExistsErrors(array $errors) : bool {
+function notExistsErrors(array $errors): bool
+{
     $marker = true;
-    foreach ($errors as $error){
-        if($error !== true){
+    foreach ($errors as $error) {
+        if ($error !== true) {
             $marker = false;
         }
     }
     return $marker;
+}
+
+function selectOption($firstValue, $secondValue): string
+{
+    return $firstValue == $secondValue ? 'selected' : '';
 }
