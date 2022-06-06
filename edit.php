@@ -6,7 +6,7 @@ $fieldsNames = ['content', 'title'];
 $fields = [];
 $errors = [];
 
-$view = 'edit';
+$view = 'articleForm';
 $categories = getCategories($db);
 $pageParams = ['title' => 'Lawrence.com', 'sidebar' => 'main/sidebar', 'categories' => $categories];
 $category_id = NULL;
