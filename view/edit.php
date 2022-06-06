@@ -1,3 +1,9 @@
+<? foreach($errors as $error): ?>
+    <div class="error">
+        <p><? if($error!==true) echo $error ?></p>
+    </div>
+<? endforeach; ?>
+
 <div class="form">
     <form method="post">
         Article Title:<br>
