@@ -6,9 +6,10 @@ $fieldsNames = ['content', 'title'];
 $fields = [];
 $errors = [];
 
-$view = 'articleForm';
+$view = 'edit';
 $categories = getCategories($db);
 $pageParams = ['title' => 'Lawrence.com', 'sidebar' => 'main/sidebar', 'categories' => $categories];
+$post = getPost($db, $id);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $fields = extractFields($_POST, $fieldsNames);
@@ -18,10 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: http://localhost/hw');
     }
 } elseif ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $post = getPost($db, $id);
     if ($post != false) {
         $fields = extractFields($post, ['title', 'content']);
-        $view = 'edit';
     } else {
         $view = 'main/404';
         header('HTTP/1.1 404 NOT FOUND');
