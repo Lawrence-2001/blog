@@ -1,10 +1,13 @@
 <?php
 
-include_once('configuration/bootstrap.php');
+$controller_name = $_GET['c'] ?? 'index';
+$path = "controllers/$controller_name.php";
 
-$articles = isset($_GET['category_id']) && !empty($_GET['category_id'])? getPostsByCategory($db, $_GET['category_id']) : getPosts($db);
-$view = $articles != false ? 'posts' : 'main/404';
-$categories = getCategories($db);
-$pageParams = ['title' => 'Lawrence.com', 'sidebar' => 'main/sidebar', 'categories' => $categories];
-$pageHTML = buildPage($view, $pageParams, ['articles' =>$articles]);
-echo $pageHTML;
+
+$controller_exists = (file_exists($path));
+if($controller_exists){
+    require_once($path);
+}
+else{
+    require_once('controllers/index.php');
+}

@@ -72,8 +72,8 @@
                         <li><a href="#0">Submenu 03</a></li>
                     </ul>
                 </li>
-                <li><a href="add.php">Add article</a></li>
-                <li><a href="edit.php">Edit article</a></li>
+                <li><a href="index.php?c=add">Add article</a></li>
+                <li><a href="index.php?c=edit">Edit article</a></li>
             </ul> <!-- end #nav -->
 
         </div>

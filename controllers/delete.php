@@ -9,7 +9,7 @@ $pageParams = ['title' => $title, 'sidebar' => 'main/sidebar', 'categories' => $
 
 if ($postExist) {
     removePost($db, $post['post_id']);
-    header('Location: http://localhost/hw');
+    header('Location: http://hw');
 } else {
     $pageHTML = buildPage('main/404', $pageParams);
     header('HTTP/1.1 404 NOT FOUND');

@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     validateFormFields($fields, $errors, 2);
     if (notExistsErrors($errors)) {
         editPost($db, $id, $fields['title'], $fields['content'], $category_id);
-        header('Location: http://localhost/hw');
+        header('Location: http://hw/index.php');
     }
 } elseif ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $post = getPost($db, $id);
