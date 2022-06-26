@@ -1,7 +1,7 @@
 <?php
 include_once('configuration/bootstrap.php');
 
-$id = $_GET['id'] ?? '';
+$id = $paramsOfURL[1] ?? '';
 $fieldsNames = ['content', 'title'];
 $fields = [];
 $errors = [];
@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     validateFormFields($fields, $errors, 2);
     if (notExistsErrors($errors)) {
         editPost($db, $id, $fields['title'], $fields['content'], $category_id);
-        header('Location: http://hw/index.php');
+        header('Location: http://hw.com/');
     }
 } elseif ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $post = getPost($db, $id);

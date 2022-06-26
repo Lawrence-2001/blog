@@ -1,7 +1,7 @@
 <?php
 include_once('configuration/bootstrap.php');
 
-$post = getPost($db, $_GET['id']);
+$post = getPost($db, $paramsOfURL[1]);
 $title = $post['title'] ?? 'Error 404';
 $postExist = $post != false;
 $categories = getCategories($db);
@@ -9,7 +9,7 @@ $pageParams = ['title' => $title, 'sidebar' => 'main/sidebar', 'categories' => $
 
 if ($postExist) {
     removePost($db, $post['post_id']);
-    header('Location: http://hw');
+    header('Location: http://hw.com/');
 } else {
     $pageHTML = buildPage('main/404', $pageParams);
     header('HTTP/1.1 404 NOT FOUND');

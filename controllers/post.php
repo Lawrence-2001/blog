@@ -2,7 +2,7 @@
 
 include_once('configuration/bootstrap.php');
 
-$post = getPost($db, $_GET['id']);
+$post = getPost($db, $paramsOfURL[1]);
 $postExist = $post != false;
 
 $categories = getCategories($db);

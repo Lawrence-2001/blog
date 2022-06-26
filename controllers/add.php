@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     validateFormFields($fields, $errors, 2);
     if(notExistsErrors($errors)){
         addPost($db, $fields['title'], $fields['content'], $_POST['category_id']);
-        header('Location: http://hw/index.php');
+        header('Location: http://hw.com/');
     }
 } elseif ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $fields = extractFields($_GET, $fieldsNames);
