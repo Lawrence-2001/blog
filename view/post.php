@@ -6,10 +6,10 @@
             <br>
             <div>Category: <?=escapingFields($post['name'])?></div>
             <hr>
-            <a href="index.php?c=delete&id=<?=$post['post_id']?>">Remove</a>
+            <a href="<?=BASE_URL?>delete/<?=$post['post_id']?>">Remove</a>
             <br><br>
-            <a href="index.php?c=edit&id=<?=$post['post_id']?>">Edit</a>
+            <a href="<?=BASE_URL?>edit/<?=$post['post_id']?>">Edit</a>
         </div>
 </div>
 <hr>
-<a href="index.php">Move to main page</a>
+<a href="<?=BASE_URL?>">Move to main page</a>

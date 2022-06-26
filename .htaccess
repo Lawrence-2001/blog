@@ -1,0 +1,15 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule .* index.php?routerURL=$0 [QSA]
+
+Options -Indexes
+
+<FilesMatch "\.(php|twig|log)$">
+    Deny from all
+</FilesMatch>
+
+<FilesMatch "index\.(php)$">
+    Allow from all
+</FilesMatch>
+

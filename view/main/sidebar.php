@@ -15,7 +15,7 @@
             /**
              * @var array $categories */
             foreach ($categories as $category):?>
-            <li><a href="index.php?category_id=<?=$category['category_id']?>" title=""><?=$category['name']?></a></li>
+            <li><a href="<?=BASE_URL?>category/<?=$category['category_id']?>" title=""><?=$category['name']?></a></li>
             <?endforeach;?>
         </ul>
     </div>

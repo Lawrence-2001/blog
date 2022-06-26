@@ -15,20 +15,20 @@
 
     <!-- CSS
     ================================================== -->
-    <link rel="stylesheet" href="assets/css/base.css">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
 
     <!-- script
     ================================================== -->
-    <script src="assets/js/modernizr.js"></script>
-    <script defer src="assets/js/fontawesome/all.min.js"></script>
+    <script src="/assets/js/modernizr.js"></script>
+    <script defer src="/assets/js/fontawesome/all.min.js"></script>
 
     <!-- favicons
     ================================================== -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-    <link rel="manifest" href="assets/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="manifest" href="/assets/site.webmanifest">
 
 </head>
 
@@ -52,7 +52,7 @@
 
         <div class="s-header__content column">
             <h1 class="s-header__logotext">
-                <a href="index.php" title="">Blog about backend development.</a>
+                <a href="http://hw.com" title="">Blog about backend development.</a>
             </h1>
             <p class="s-header__tagline">Welcome to my blog.</p>
         </div>
@@ -64,7 +64,7 @@
         <div class="row">
 
             <ul class="s-header__nav">
-                <li class="current"><a href="index.php">Home</a></li>
+                <li class="current"><a href="http://hw.com">Home</a></li>
                 <li class="has-children"><a href="#0">Dropdown</a>
                     <ul>
                         <li><a href="#0">Submenu 01</a></li>
@@ -72,8 +72,8 @@
                         <li><a href="#0">Submenu 03</a></li>
                     </ul>
                 </li>
-                <li><a href="index.php?c=add">Add article</a></li>
-                <li><a href="index.php?c=edit">Edit article</a></li>
+                <li><a href="<?=BASE_URL?>add">Add article</a></li>
+                <li><a href="<?=BASE_URL?>edit">Edit article</a></li>
             </ul> <!-- end #nav -->
 
         </div>
@@ -102,7 +102,7 @@
 
     <div class="ss-copyright">
         <span>Blog 2022</span>
-        <span>Design by <a href="127.0.0.1">K.L.L.</a></span>
+        <span>Design by <a href="http://hw.com">K.L.L.</a></span>
     </div>
 
     </div> <!-- end footer__bottom -->
@@ -121,8 +121,8 @@
 
 <!-- Java Script
 ================================================== -->
-<script src="assets/js/jquery-3.2.1.min.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="/assets/js/jquery-3.2.1.min.js"></script>
+<script src="/assets/js/main.js"></script>
 
 </body>
 
